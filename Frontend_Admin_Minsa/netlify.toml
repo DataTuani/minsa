@@ -1,0 +1,7 @@
+[build]
+  base = "Frontend_Admin_Minsa"
+  command = "npm run build"
+  publish = "Frontend_Admin_Minsa/dist"
+
+[build.environment]
+  NODE_VERSION = "18"
