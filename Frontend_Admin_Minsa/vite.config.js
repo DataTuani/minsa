@@ -1,20 +1,17 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 
 export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    port: 3000
   },
   build: {
     outDir: 'dist',
-    sourcemap: false,
-    // Esto ayuda con el routing en Vercel
-    rollupOptions: {
-      external: []
-    }
+    sourcemap: false
   },
-  // Para Vercel, usa '/' en lugar de './'
-  base: '/'
+  // Para producción - importante que sea './' para que funcione en subrutas
+  base: './'
+  // agregale conf de rutas que cominenzan  con /minsa para que se puedan ver
+  
 })
