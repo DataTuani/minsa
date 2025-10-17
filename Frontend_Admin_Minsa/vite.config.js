@@ -10,8 +10,11 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false
   },
-  // Para producción - importante que sea './' para que funcione en subrutas
-  base: './'
-  // agregale conf de rutas que cominenzan  con /minsa para que se puedan ver
-  
+  base: './',
+  // Para rutas que comienzan con /minsa
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  }
 })
